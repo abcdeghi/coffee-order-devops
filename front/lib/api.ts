@@ -29,7 +29,7 @@ export async function modifyOrder(
   }[]
 ) {
   const response = await fetch(
-    `http://localhost:8081/api/orders/${orderId}`,
+    `http://`${API_BASE}/api/orders/${orderId}`,
     {
       method: "PATCH",
       headers: {
@@ -78,7 +78,7 @@ export interface CreateOrderRequest {
   }[];
 }
 export async function createOrder(data: CreateOrderRequest) {
-  const response = await fetch("http://localhost:8081/api/orders", {
+  const response = await fetch("`${API_BASE}/api/orders", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
