@@ -29,7 +29,7 @@ export async function modifyOrder(
   }[]
 ) {
   const response = await fetch(
-    `http://`${API_BASE}/api/orders/${orderId}`,
+    `${API_BASE}/api/orders/${orderId}`,
     {
       method: "PATCH",
       headers: {
