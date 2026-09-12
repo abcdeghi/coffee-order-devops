@@ -1,3 +1,43 @@
+## DevOps 개선
+
+본 저장소는 기존 팀 프로젝트를 기반으로, 프로젝트 종료 후
+Docker 기반 실행 환경과 CI 및 자동 배포 과정을 개인적으로 추가 구성한 저장소입니다.
+
+### 구성 내용
+
+- Spring Boot 백엔드 Docker 이미지 구성
+- Next.js 프론트엔드 Docker 이미지 구성
+- Docker Compose를 통한 로컬 통합 실행 환경 구성
+- GitHub Actions를 통한 백엔드/프론트엔드/Docker 빌드 검증
+- Render Web Service를 이용한 백엔드 및 프론트엔드 배포
+- Git push 이후 Render의 Git 연동을 통한 자동 배포 환경 구성
+
+## Deployment Flow
+
+```text
+Developer
+   ↓
+git push
+   ↓
+GitHub
+   ├─ GitHub Actions
+   │   ├─ Backend Build
+   │   ├─ Frontend Build
+   │   └─ Docker Build
+   │
+   └─ Render Auto Deploy
+       ├─ Backend (Spring Boot)
+       └─ Frontend (Next.js)
+              ↓
+          Backend API
+```
+
+## Deployment
+
+- Frontend: https://coffee-order-front.onrender.com
+- Backend: https://coffee-order-back.onrender.com
+- Swagger: https://coffee-order-back.onrender.com/swagger-ui/index.html
+
 # Grids & Circles
 
 이메일을 사용자 식별자로 사용하는 원두 주문 서비스입니다.
