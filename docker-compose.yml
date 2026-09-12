@@ -1,0 +1,16 @@
+services:
+  back:
+    build:
+      context: ./back
+    container_name: doffee-back-container
+    ports:
+      - "8081:8080"
+
+  front:
+    build:
+      context: ./front
+    container_name: doffee-front-container
+    ports:
+      - "3000:3000"
+    depends_on:
+      - back

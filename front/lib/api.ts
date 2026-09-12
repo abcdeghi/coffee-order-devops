@@ -1,6 +1,6 @@
 import { Product, OrdersDto, UserOrdersDto, OrdersSaveReqBody, RsData } from "./types";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8080";
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8081";
 
 export async function cancelOrderDetail(
   orderId: number,
@@ -29,7 +29,7 @@ export async function modifyOrder(
   }[]
 ) {
   const response = await fetch(
-    `http://localhost:8080/api/orders/${orderId}`,
+    `http://localhost:8081/api/orders/${orderId}`,
     {
       method: "PATCH",
       headers: {
@@ -78,7 +78,7 @@ export interface CreateOrderRequest {
   }[];
 }
 export async function createOrder(data: CreateOrderRequest) {
-  const response = await fetch("http://localhost:8080/api/orders", {
+  const response = await fetch("http://localhost:8081/api/orders", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
